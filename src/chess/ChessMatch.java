@@ -75,6 +75,7 @@ public class ChessMatch {
 	}
 
 	public ChessPiece performChessMove(ChessPosition sourcePosition, ChessPosition targetPosition) {
+		
 		Position source = sourcePosition.toPosition();
 		Position target = targetPosition.toPosition();
 
@@ -101,7 +102,7 @@ public class ChessMatch {
 		
 		check = (testCheck(opponent(currentPlayer)));
 
-		if (testCheck(opponent(currentPlayer))) {
+		if (testCheckMate(opponent(currentPlayer))) {
 			checkMate = true;
 		} else {
 			nextTurn();
